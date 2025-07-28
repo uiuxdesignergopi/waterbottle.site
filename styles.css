@@ -1,0 +1,85 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.hero {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f8ff;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* CTA Button */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #0275d8, #00c853);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ff5722;
+  border-radius: 24px;
+  transition: bottom 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.cta-btn:hover::before {
+  bottom: 0;
+}
+
+/* Bottle Gallery */
+.bottle-gallery {
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+}
+
+.bottle-gallery img {
+  width: 300px;
+  height: 500px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.bottle-gallery img:hover {
+  transform: translateY(-10px) rotate(-5deg);
+}
